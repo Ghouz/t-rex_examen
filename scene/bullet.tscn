@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl4wspgn4wqkm"]
+
+[ext_resource type="Texture2D" uid="uid://bo3p4vwkehdr3" path="res://art/ennemie.png" id="1_fuhhs"]
+
+[sub_resource type="GDScript" id="GDScript_bmvu7"]
+script/source = "extends Area2D
+
+
+func _process(delta):
+	position.x += get_parent().speed*2
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpo4s"]
+size = Vector2(16, 16)
+
+[node name="bullet2" type="Area2D"]
+script = SubResource("GDScript_bmvu7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("1_fuhhs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jpo4s")

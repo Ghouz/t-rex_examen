@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccc5ica6b178h"]
+
+[ext_resource type="Texture2D" uid="uid://cn3k5rl0pai7w" path="res://art/ennemi2.png" id="1_3itly"]
+
+[node name="ennemie" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3.75, 3.75)
+texture = ExtResource("1_3itly")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-4, 28)
+polygon = PackedVector2Array(28, 17, -23, 17, -30, -12, 31, -12)

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmdnr0c32x334"]
+
+[ext_resource type="Script" path="res://scene/alien.gd" id="1_vo6n6"]
+[ext_resource type="Texture2D" uid="uid://b7jcer2vhv3wo" path="res://art/New Piskel.png" id="2_fmhnx"]
+[ext_resource type="AudioStream" uid="uid://cxg6kk76s6ynb" path="res://art/laser-shoot-38126.mp3" id="3_26y2p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rduct"]
+radius = 13.0
+height = 60.0
+
+[node name="alien" type="CharacterBody2D"]
+z_index = 1
+position = Vector2(1, 1)
+script = ExtResource("1_vo6n6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4, 3)
+scale = Vector2(1.48148, 1.48148)
+texture = ExtResource("2_fmhnx")
+
+[node name="up" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_rduct")
+
+[node name="sautson" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, 1)
+stream = ExtResource("3_26y2p")

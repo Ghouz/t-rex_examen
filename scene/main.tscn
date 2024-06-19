@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvuj25bltvrdh"]
+
+[ext_resource type="PackedScene" uid="uid://buh4dqyqpcn27" path="res://scene/fond.tscn" id="1_pnms1"]
+[ext_resource type="Script" path="res://scene/main.gd" id="1_rfsqy"]
+[ext_resource type="PackedScene" uid="uid://bpmojda1ex0vm" path="res://scene/sol.tscn" id="2_n60oa"]
+[ext_resource type="PackedScene" uid="uid://cmdnr0c32x334" path="res://scene/alien.tscn" id="3_f1xwq"]
+[ext_resource type="PackedScene" uid="uid://dt84ags1yqpek" path="res://scene/interface.tscn" id="5_4dk64"]
+[ext_resource type="PackedScene" uid="uid://lfdwv7mjagk3" path="res://scene/gameover.tscn" id="6_isrv3"]
+[ext_resource type="PackedScene" uid="uid://jb5kknr44sl7" path="res://scene/ball.tscn" id="7_30d88"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_rfsqy")
+
+[node name="fond" parent="." instance=ExtResource("1_pnms1")]
+
+[node name="sol" parent="." instance=ExtResource("2_n60oa")]
+position = Vector2(0, 48)
+
+[node name="alien" parent="." instance=ExtResource("3_f1xwq")]
+position = Vector2(72, 192)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 328)
+
+[node name="interface" parent="." instance=ExtResource("5_4dk64")]
+
+[node name="gameover" parent="." instance=ExtResource("6_isrv3")]
+process_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="ball" parent="." instance=ExtResource("7_30d88")]
+position = Vector2(64, -144)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

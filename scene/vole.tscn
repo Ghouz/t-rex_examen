@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://40je32qt4o50"]
+
+[ext_resource type="Script" path="res://scene/vole.gd" id="1_ncnai"]
+[ext_resource type="Texture2D" uid="uid://bxfygwwokbw63" path="res://art/fleche.png" id="2_r538u"]
+
+[node name="vole" type="Area2D"]
+script = ExtResource("1_ncnai")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(15.6464, -32)
+scale = Vector2(0.206071, 0.273504)
+texture = ExtResource("2_r538u")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-8, -40)
+polygon = PackedVector2Array(104, 8, -21, 36, -56, 8, -20, -20)
